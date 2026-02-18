@@ -2,20 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Biodata - Yogendra Singh Kushwaha</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        /* Global Reset for perfectly calculating widths */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         /* Base Body Style */
         body {
             font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 40px;
+            background-color: #0a0705; 
+            color: #333;
+            overflow-x: hidden; 
             display: flex;
             justify-content: center;
-            background-color: #0a0705; /* Deep, elegant dark background */
-            color: #333;
-            overflow-x: hidden; /* Prevents scrollbars from the animation */
+            padding: 40px 20px;
+            min-height: 100vh;
         }
 
         /* --- GOLDEN AURA ANIMATION --- */
@@ -33,64 +40,27 @@
         .aura {
             position: absolute;
             border-radius: 50%;
-            filter: blur(120px); /* Creates the soft glow effect */
+            filter: blur(120px); 
             opacity: 0.6;
             animation-iteration-count: infinite;
             animation-timing-function: ease-in-out;
             animation-direction: alternate;
         }
 
-        .aura1 {
-            width: 50vw;
-            height: 50vw;
-            background: #d4af37; /* Classic Gold */
-            top: -10%;
-            left: -10%;
-            animation-name: float1;
-            animation-duration: 25s;
-        }
+        .aura1 { width: 50vw; height: 50vw; background: #d4af37; top: -10%; left: -10%; animation: float1 25s infinite ease-in-out alternate; }
+        .aura2 { width: 45vw; height: 45vw; background: #ffdf00; bottom: -20%; right: -10%; animation: float2 32s infinite ease-in-out alternate; }
+        .aura3 { width: 40vw; height: 40vw; background: #b8860b; top: 30%; left: 40%; animation: float3 28s infinite ease-in-out alternate; }
 
-        .aura2 {
-            width: 45vw;
-            height: 45vw;
-            background: #ffdf00; /* Bright Gold */
-            bottom: -20%;
-            right: -10%;
-            animation-name: float2;
-            animation-duration: 32s;
-        }
-
-        .aura3 {
-            width: 40vw;
-            height: 40vw;
-            background: #b8860b; /* Dark Goldenrod */
-            top: 30%;
-            left: 40%;
-            animation-name: float3;
-            animation-duration: 28s;
-        }
-
-        /* Random Movement Keyframes */
-        @keyframes float1 {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(30vw, 20vh) scale(1.2); }
-        }
-        @keyframes float2 {
-            0% { transform: translate(0, 0) scale(1.2); }
-            100% { transform: translate(-30vw, -20vh) scale(1); }
-        }
-        @keyframes float3 {
-            0% { transform: translate(0, 0) scale(0.9); }
-            100% { transform: translate(-25vw, 30vh) scale(1.3); }
-        }
-        /* ------------------------------ */
+        @keyframes float1 { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(30vw, 20vh) scale(1.2); } }
+        @keyframes float2 { 0% { transform: translate(0, 0) scale(1.2); } 100% { transform: translate(-30vw, -20vh) scale(1); } }
+        @keyframes float3 { 0% { transform: translate(0, 0) scale(0.9); } 100% { transform: translate(-25vw, 30vh) scale(1.3); } }
 
         /* Glassmorphism Card Style */
         .page {
-            /* Slightly more transparent to let the gold shine through */
             background: rgba(255, 255, 255, 0.88); 
             backdrop-filter: blur(15px);
-            width: 850px;
+            width: 100%;             
+            max-width: 850px;        
             padding: 50px 60px;
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.4);
@@ -101,17 +71,17 @@
         .header {
             text-align: center;
             margin-bottom: 30px;
-            position: relative;
         }
 
         .ganesha-logo {
             width: 150px;
             margin-bottom: 10px;
+            height: auto;
         }
 
         .header h1 {
             color: #1b2a47;
-            font-size: 32px;
+            font-size: clamp(24px, 4vw, 32px); /* Fluid typography: scales automatically */
             margin: 5px 0;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -125,7 +95,6 @@
             font-weight: 500;
         }
 
-        /* Main Profile Picture styling */
         .profile-pic {
             width: 170px;
             height: 170px;
@@ -145,7 +114,7 @@
         .name-title {
             margin: 5px 0;
             color: #1b2a47;
-            font-size: 26px;
+            font-size: clamp(20px, 3.5vw, 26px);
             font-weight: 600;
         }
 
@@ -154,7 +123,7 @@
             background: rgba(255, 255, 255, 0.6);
             padding: 20px;
             border-radius: 12px;
-            border-left: 5px solid #d4af37; /* Changed accent to gold */
+            border-left: 5px solid #d4af37; 
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -172,34 +141,37 @@
             font-weight: 600;
         }
 
+        /* Responsive Grid System */
         .grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px 25px;
         }
 
         .row {
             display: flex;
             font-size: 15px;
+            word-break: break-word; /* Prevents long emails/links from breaking the layout */
         }
 
         .label {
             font-weight: 600;
             color: #555;
-            width: 150px;
+            width: 140px;
             flex-shrink: 0;
+            padding-right: 10px;
         }
 
         .value {
             color: #222;
             font-weight: 500;
+            flex-grow: 1;
         }
 
         .full-width {
             grid-column: span 2;
         }
 
-        /* Gallery Section for Extra Photos */
         .gallery-title {
             text-align: center;
             font-size: 20px;
@@ -212,12 +184,15 @@
         .gallery {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
+            flex-wrap: wrap; /* Allows photos to wrap to the next line safely */
         }
 
         .gallery img {
-            width: 220px;
-            height: 300px;
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            aspect-ratio: 3/4; /* Keeps consistent photo sizing */
             object-fit: cover;
             border-radius: 12px;
             box-shadow: 0 8px 15px rgba(0,0,0,0.3);
@@ -229,32 +204,63 @@
             transform: scale(1.03);
         }
 
-        /* Optimization for PDF Printing */
-        @media print {
-            body {
-                background: white;
-                padding: 0;
+        /* --- TABLET RESPONSIVENESS (Max 992px) --- */
+        @media (max-width: 992px) {
+            .page { padding: 40px; }
+            .grid { gap: 15px; }
+            .label { width: 120px; }
+        }
+
+        /* --- MOBILE RESPONSIVENESS (Max 768px) --- */
+        @media (max-width: 768px) {
+            body { padding: 20px 15px; }
+            .page { padding: 30px 20px; }
+            
+            .grid { grid-template-columns: 1fr; } /* Stacks into single column */
+            .full-width { grid-column: span 1; }
+            
+            .row {
+                flex-direction: column; /* Label goes above Value */
+                border-bottom: 1px solid rgba(0,0,0,0.05);
+                padding-bottom: 8px;
             }
-            .aura-bg {
-                display: none; /* Hides the animation when printing */
-            }
-            .page {
-                box-shadow: none;
-                border: none;
+            .label {
                 width: 100%;
-                padding: 20px;
-                backdrop-filter: none;
-                background: white;
+                color: #b8860b; 
+                font-size: 13px;
+                margin-bottom: 4px;
             }
-            .section {
-                background: #f9f9f9;
-                break-inside: avoid;
-                border-left: 5px solid #222;
+            .value { font-size: 15px; }
+            
+            .gallery img { max-width: 100%; height: auto; }
+        }
+
+        /* --- SMALL MOBILE RESPONSIVENESS (Max 480px) --- */
+        @media (max-width: 480px) {
+            body { padding: 10px; }
+            .page { padding: 25px 15px; border-radius: 15px; }
+            .profile-pic { width: 130px; height: 130px; }
+            .section { padding: 15px; }
+            .section-title { font-size: 18px; }
+            .value { font-size: 14px; }
+        }
+
+        /* --- PRINT OPTIMIZATION --- */
+        @media print {
+            body { background: white; padding: 0; min-height: auto; display: block; }
+            .aura-bg { display: none; }
+            .page {
+                box-shadow: none; border: none; width: 100%; max-width: 100%;
+                padding: 20px; backdrop-filter: none; background: white;
             }
-            .gallery img {
-                box-shadow: none;
-                border: 1px solid #ddd;
-            }
+            .section { background: #f9f9f9; break-inside: avoid; border-left: 5px solid #222; margin-bottom: 20px; padding: 15px;}
+            .gallery img { box-shadow: none; border: 1px solid #ddd; max-width: 220px; }
+            /* Force print to keep grid layout if possible */
+            .grid { display: grid; grid-template-columns: 1fr 1fr; }
+            .full-width { grid-column: span 2; }
+            .row { flex-direction: row; border: none; }
+            .label { color: #555; width: 130px; font-size: 14px;}
+            .value { font-size: 14px; }
         }
     </style>
 </head>
@@ -270,9 +276,7 @@
         <div class="header">
             <img src="ganesha.png" alt="Shree Ganesha" class="ganesha-logo">
             <h2>॥ Shree Ganeshay Namah ॥</h2>
-            
             <h1>Matrimonial Biodata</h1>
-            
             <img src="WhatsApp Image 2026-02-04 at 6.43.01 AM.jpeg" alt="Yogendra Singh Kushwaha" class="profile-pic">
             <h3 class="name-title">Yogendra Singh Kushwaha</h3>
         </div>
@@ -294,21 +298,20 @@
             <div class="section-title">Religion & Astrological</div>
             <div class="grid">
                 <div class="row"><div class="label">Religion:</div><div class="value">Sanatan Dharma (Hindu)</div></div>
-                <div class="row"><div class="label">Caste:</div><div class="value">Kushwaha (Kaachi)</div></div>
+                <div class="row"><div class="label">Caste:</div><div class="value">Kushwaha</div></div>
                 <div class="row"><div class="label">Gotra:</div><div class="value">Rajwariya</div></div>
                 <div class="row"><div class="label">Mother Tongue:</div><div class="value">Hindi</div></div>
                 <div class="row"><div class="label">Rashi:</div><div class="value">Dhanur (Sagittarius)</div></div>
                 <div class="row"><div class="label">Nakshatra:</div><div class="value">Mula</div></div>
-                <div class="row"><div class="label">Manglik:</div><div class="value">No</div></div>
             </div>
         </div>
 
         <div class="section">
             <div class="section-title">Education & Profession</div>
             <div class="grid">
-                <div class="row full-width"><div class="label">Highest Education:</div><div class="value">BCA, MCA (Dropout)</div></div>
+                <div class="row full-width"><div class="label">Highest Education:</div><div class="value">BCA</div></div>
                 <div class="row full-width"><div class="label">College:</div><div class="value">Indira Gandhi National Open University</div></div>
-                <div class="row full-width"><div class="label">Occupation:</div><div class="value">Freelance (Web Development / Gaming / Health, Nutrition & Wellness Coach)</div></div>
+                <div class="row full-width"><div class="label">Occupation:</div><div class="value">Freelancing (Web Development / Gaming / Health, Nutrition & Wellness Coach)</div></div>
             </div>
         </div>
 
@@ -318,15 +321,17 @@
                 <div class="row full-width"><div class="label">Father's Name:</div><div class="value">Shri. Mahendra Pal Singh (Defense Person, Retired)</div></div>
                 <div class="row full-width"><div class="label">Mother's Name:</div><div class="value">Smt. Rama Devi (Homemaker)</div></div>
                 <div class="row full-width"><div class="label">Brother:</div><div class="value">Yatender Singh Kushwaha (Elder) - Sr. Design Engineer (ASIC Design and Verification)</div></div>
+            <div class="row full-width"><div class="label">Sister-in-law:</div><div class="value">Meena Kushwaha (Homemaker)</div></div>
+            
             </div>
         </div>
 
         <div class="section">
             <div class="section-title">Contact Details</div>
             <div class="grid">
-                <div class="row full-width"><div class="label">Address:</div><div class="value">S/O Mahendra Pal Singh, 27, Vill:- Raypur, Post:- Khair, District:- Aligarh (202138)</div></div>
+                <div class="row full-width"><div class="label">Address:</div><div class="value">S/O Shri Mahendra Pal Singh, 27, Vill:- Raypur, Post:- Khair, District:- Aligarh (202138)</div></div>
                 <div class="row"><div class="label">Contact No:</div><div class="value">+91 7983914058</div></div>
-                <div class="row"><div class="label">Email ID:</div><div class="value">Yogi.121@outlook.com</div></div>
+                <div class="row"><div class="label">Email ID:</div><div class="value">yogi.121@outlook.com</div></div>
                 <div class="row"><div class="label">Father's No:</div><div class="value">+91 7063949192</div></div>
                 <div class="row"><div class="label">Mother's No:</div><div class="value">+91 7599313745</div></div>
             </div>
@@ -343,4 +348,3 @@
 
 </body>
 </html>
-
