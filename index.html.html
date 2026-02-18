@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata - Yogendra Singh Kushwaha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Animated Web-Dev/Gaming Inspired Background */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1b2a47);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #333;
+        }
+
+        /* Glassmorphism Card Style */
+        .page {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            width: 850px;
+            padding: 50px 60px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .ganesha-logo {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            color: #1b2a47;
+            font-size: 32px;
+            margin: 5px 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .header h2 {
+            color: #d4af37; /* Gold accent */
+            font-size: 16px;
+            margin: 0 0 25px 0;
+            font-weight: 500;
+        }
+
+        /* Main Profile Picture styling */
+        .profile-pic {
+            width: 170px;
+            height: 170px;
+            object-fit: cover;
+            /* Focuses on the top center to display the full face perfectly */
+            object-position: center 15%; 
+            border-radius: 50%;
+            border: 4px solid #d4af37;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            margin-bottom: 15px;
+        }
+
+        .name-title {
+            margin: 5px 0;
+            color: #1b2a47;
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #203a43;
+        }
+
+        .section-title {
+            color: #203a43;
+            font-size: 20px;
+            border-bottom: 2px dashed #ccc;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 20px;
+        }
+
+        .row {
+            display: flex;
+            font-size: 15px;
+        }
+
+        .label {
+            font-weight: 600;
+            color: #555;
+            width: 150px;
+            flex-shrink: 0;
+        }
+
+        .value {
+            color: #222;
+            font-weight: 400;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        /* Gallery Section for Extra Photos */
+        .gallery-title {
+            text-align: center;
+            font-size: 20px;
+            color: #1b2a47;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .gallery img {
+            width: 220px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            border: 3px solid #fff;
+        }
+
+        /* Optimization for PDF Printing */
+        @media print {
+            body {
+                background: white;
+                animation: none;
+                padding: 0;
+            }
+            .page {
+                box-shadow: none;
+                border: none;
+                width: 100%;
+                padding: 20px;
+                backdrop-filter: none;
+                background: white;
+            }
+            .section {
+                background: #f9f9f9;
+                break-inside: avoid;
+            }
+            .gallery img {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <div class="header">
+            <img src="ganesha.png" alt="Shree Ganesha" class="ganesha-logo">
+            <h2>॥ Shree Ganeshay Namah ॥</h2>
+            
+            <h1>Matrimonial Biodata</h1>
+            
+            <img src="WhatsApp Image 2026-02-04 at 6.43.01 AM.jpeg" alt="Yogendra Singh Kushwaha" class="profile-pic">
+            <h3 class="name-title">Yogendra Singh Kushwaha</h3>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Personal Details</div>
+            <div class="grid">
+                <div class="row"><div class="label">Date of Birth:</div><div class="value">17-08-1994</div></div>
+                <div class="row"><div class="label">Time of Birth:</div><div class="value">2:30 PM</div></div>
+                <div class="row"><div class="label">Place of Birth:</div><div class="value">Khair, Aligarh</div></div>
+                <div class="row"><div class="label">Height:</div><div class="value">5 feet 10 inches (178 cm)</div></div>
+                <div class="row"><div class="label">Complexion:</div><div class="value">Brown</div></div>
+                <div class="row"><div class="label">Diet:</div><div class="value">Vegetarian</div></div>
+                <div class="row"><div class="label">Marital Status:</div><div class="value">Single</div></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Religion & Astrological</div>
+            <div class="grid">
+                <div class="row"><div class="label">Religion:</div><div class="value">Sanatan Dharma (Hindu)</div></div>
+                <div class="row"><div class="label">Caste:</div><div class="value">Kushwaha</div></div>
+                <div class="row"><div class="label">Gotra:</div><div class="value">Rajwariya</div></div>
+                <div class="row"><div class="label">Mother Tongue:</div><div class="value">Hindi</div></div>
+                <div class="row"><div class="label">Rashi:</div><div class="value">Dhanur (Sagittarius)</div></div>
+                <div class="row"><div class="label">Nakshatra:</div><div class="value">Mula</div></div>
+                <div class="row"><div class="label">Manglik:</div><div class="value">No</div></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Education & Profession</div>
+            <div class="grid">
+                <div class="row full-width"><div class="label">Highest Education:</div><div class="value">BCA</div></div>
+                <div class="row full-width"><div class="label">College:</div><div class="value">Indira Gandhi National Open University</div></div>
+                <div class="row full-width"><div class="label">Occupation:</div><div class="value">Freelancing (Web Development / Gaming / Health, Nutrition & Wellness Coach)</div></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Family Background</div>
+            <div class="grid">
+                <div class="row full-width"><div class="label">Father's Name:</div><div class="value">Shri. Mahendra Pal Singh (Defense Person, Retired)</div></div>
+                <div class="row full-width"><div class="label">Mother's Name:</div><div class="value">Smt. Rama Devi (Homemaker)</div></div>
+                <div class="row full-width"><div class="label">Brother:</div><div class="value">Yatender Singh Kushwaha (Elder) - Sr. Design Engineer (ASIC Design and Verification)</div></div>
+                <div class="row full-width"><div class="label">Sister-in-Law:</div><div class="value">Meena Kushwaha (Homemaker)</div></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Contact Details</div>
+            <div class="grid">
+                <div class="row full-width"><div class="label">Address:</div><div class="value">S/O Mahendra Pal Singh, 27, Vill:- Raypur, Post:- Khair, District:- Aligarh (202138)</div></div>
+                <div class="row"><div class="label">Contact No:</div><div class="value">+91 7983914058</div></div>
+                <div class="row"><div class="label">Email ID:</div><div class="value">yogi.121@outlook.com</div></div>
+                <div class="row"><div class="label">Father's No:</div><div class="value">+91 7063949192</div></div>
+                <div class="row"><div class="label">Mother's No:</div><div class="value">+91 7599313745</div></div>
+            </div>
+        </div>
+
+        <!-- <div class="gallery-title">Gallery</div> -->
+        <div class="gallery">
+            <img src="IMG-20240814-WA0001.jpg" alt="Full Body Photo">
+            <img src="DSC_1313.jpg" alt="Full Body Photo">
+            <img src="DSC_1323.jpg" alt="Half Body Photo">
+        </div>
+
+    </div>
+
+</body>
+</html>
